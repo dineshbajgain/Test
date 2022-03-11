@@ -25,7 +25,6 @@ computed: {
     async logoutFromDevice(){
       await this.LogOut();
       this.$router.push('/login')
-
     }
   }
 }
