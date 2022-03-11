@@ -1,9 +1,15 @@
 require('./bootstrap');
-import App from './components/App.vue'
-import router from './router/router'
 import { createApp } from 'vue'
+import App         from './components/App.vue'
+import store       from './store';
+import router      from './router/router'
+import setupInterceptors from './services/setupInterceptors';
+setupInterceptors();
 
-// import the root component App from a single-file component.
-// import App from './App.vue'
 
-window.Vue = createApp(App).use(router).mount('#app')
+
+const app = createApp(App);
+app.
+use(router).
+use(store).
+mount('#app')
