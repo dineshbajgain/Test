@@ -32,7 +32,7 @@ const actions = {
 
   async LogOut({ commit }) {
     let user = null;
-    commit("logout", user);
+    await commit("logout", user);
   },
 };
 
@@ -44,6 +44,8 @@ const mutations = {
 
   logout(state, user) {
     state.user = user;
+    state.token = user;
+    localStorage.clear();
   },
 };
 
